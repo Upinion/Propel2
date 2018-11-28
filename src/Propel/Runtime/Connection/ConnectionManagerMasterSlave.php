@@ -172,6 +172,8 @@ class ConnectionManagerMasterSlave implements ConnectionManagerInterface
             } else {
                 $keys = array_keys($this->readConfiguration);
                 $key = $keys[mt_rand(0, count($keys) - 1)];
+                if ($this->writeConfiguration != null)
+                    $configuration = array_merge($this->writeConfiguration, $configuration);
                 $configuration = $this->readConfiguration[$key];
                 $this->readConnection = ConnectionFactory::create($configuration, $adapter);
                 $this->readConnection->setName($this->getName());
