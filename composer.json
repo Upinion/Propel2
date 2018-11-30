@@ -40,10 +40,5 @@
     },
     "bin": [
         "bin/propel"
-    ],
-    "extra": {
-        "branch-alias": {
-            "dev-master": "master"
-        }
-    }
+    ]
 }
